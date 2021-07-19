@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: server-depl
+  labels:
+    app: ingress-default-backend
+spec:
+  replicas: 0
+  selector:
+    matchLabels:
+      app: ingress-default-backend
+  template:
+    metadata:
+      labels:
+        app: ingress-default-backend
+    spec:
+      containers:
+      - name: idb-server
+        image: idb-server
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 80

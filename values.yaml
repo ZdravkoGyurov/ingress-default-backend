@@ -1,0 +1,9 @@
+ingress-nginx:
+  controller:
+    image:
+      registry: k8s.gcr.io
+      image: ingress-nginx/controller
+      tag: "v0.47.0"
+      digest: sha256:a1e4efc107be0bb78f32eaec37bef17d7a0c81bec8066cdf2572508d21351d0b
+    config:
+      custom-http-errors: 400,503

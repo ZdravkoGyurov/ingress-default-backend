@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: server-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /$1
+    nginx.ingress.kubernetes.io/backend-protocol: HTTP
+    nginx.ingress.kubernetes.io/use-regex: "true"
+    nginx.ingress.kubernetes.io/default-backend: custom-default-backend
+    nginx.ingress.kubernetes.io/custom-http-errors: 400,503
+  labels:
+    app: ingress-default-backend
+    chart: ingress-default-backend
+spec:
+  rules:
+  - host: localhost
+    http:
+      paths:
+      - path: /(.*)
+        pathType: Prefix
+        backend:
+          service:
+            name: server-svc
+            port:
+              number: 80

@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: custom-default-backend
+  labels:
+    app.kubernetes.io/name: custom-default-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: custom-default-backend
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: custom-default-backend
+    spec:
+      containers:
+      - name: idb-custom-backend
+        image: idb-custom-backend
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 80
