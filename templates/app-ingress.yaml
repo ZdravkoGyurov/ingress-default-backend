@@ -7,7 +7,7 @@ metadata:
     nginx.ingress.kubernetes.io/backend-protocol: HTTP
     nginx.ingress.kubernetes.io/use-regex: "true"
     nginx.ingress.kubernetes.io/default-backend: custom-default-backend
-    nginx.ingress.kubernetes.io/custom-http-errors: 400,503
+    nginx.ingress.kubernetes.io/custom-http-errors: 400,404,500,503
   labels:
     app: ingress-default-backend
     chart: ingress-default-backend
@@ -16,7 +16,7 @@ spec:
   - host: localhost
     http:
       paths:
-      - path: /(.*)
+      - path: /(api.*)
         pathType: Prefix
         backend:
           service:

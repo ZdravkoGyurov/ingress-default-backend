@@ -8,6 +8,7 @@ spec:
   type: ClusterIP
   ports:
     - port: 80
-      protocol: TCP
+      targetPort: 80
+      name: http
   selector:
     app: ingress-default-backend

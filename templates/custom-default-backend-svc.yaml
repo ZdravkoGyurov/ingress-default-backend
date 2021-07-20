@@ -5,9 +5,10 @@ metadata:
   labels:
     app.kubernetes.io/name: custom-default-backend
 spec:
-  selector:
-    app.kubernetes.io/name: custom-default-backend
+  type: ClusterIP
   ports:
   - port: 80
     targetPort: 80
     name: http
+  selector:
+    app.kubernetes.io/name: custom-default-backend
