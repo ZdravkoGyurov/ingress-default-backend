@@ -1,4 +1,12 @@
 ingress-nginx:
+  defaultBackend:
+    enabled: true
+    name: defaultbackend
+    image:
+      repository: idb-custom-backend
+      tag: "latest"
+      pullPolicy: IfNotPresent
+      readOnlyRootFilesystem: false
   controller:
     image:
       registry: k8s.gcr.io

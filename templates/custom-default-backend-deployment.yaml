@@ -19,4 +19,4 @@ spec:
         image: idb-custom-backend
         imagePullPolicy: IfNotPresent
         ports:
-        - containerPort: 80
+        - containerPort: 8080
