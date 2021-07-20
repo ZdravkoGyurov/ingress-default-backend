@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: idb-server
-        image: idb-server
+        image: zdravkogyurov/idb-server:latest
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 80

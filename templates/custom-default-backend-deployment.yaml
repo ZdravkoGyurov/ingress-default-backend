@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: idb-custom-backend
-        image: idb-custom-backend
+        image: zdravkogyurov/idb-custom-backend:latest
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8080

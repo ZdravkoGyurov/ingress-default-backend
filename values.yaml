@@ -3,7 +3,8 @@ ingress-nginx:
     enabled: true
     name: defaultbackend
     image:
-      repository: idb-custom-backend
+      registry: docker.io
+      image: zdravkogyurov/idb-custom-backend
       tag: "latest"
       pullPolicy: IfNotPresent
       readOnlyRootFilesystem: false
