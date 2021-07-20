@@ -1,1 +1,0 @@
-helm upgrade ingress-default-backend . --install --namespace idb --create-namespace

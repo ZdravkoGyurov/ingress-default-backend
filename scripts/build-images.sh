@@ -1,1 +1,0 @@
-docker build --no-cache -t idb-custom-backend images/custom-backend && docker build --no-cache -t idb-server images/server
